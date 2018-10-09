@@ -9,7 +9,7 @@
     <div class="mask"><span>{{ label }}</span></div>
     <div class="mask"><span>{{ label }}</span></div>
     <audio ref="audio">
-      <source src="/buzz2.mp3">
+      <source src="/glitch.mp3">
     </audio>
   </span>
 </template>
@@ -75,9 +75,9 @@ a {
   // left: 50%;
   // transform: translate(-50%, -50%);
   transform: translate(0, 0);
-  font-size: 36px;
-  letter-spacing: 0.1em;
-  line-height: 1.4;
+  // font-size: 36px;
+  // letter-spacing: 0.1em;
+  // line-height: 1.4;
   text-transform: uppercase;
   z-index: 1;
 
