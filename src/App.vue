@@ -1,24 +1,34 @@
 <template>
   <div id="app">
-    <nav>
-      <div class="left">
-        <span>RED CABINET</span>
-      </div>
-      <div class="right">
-        <router-link to="/concerts">CONCERTS</router-link>
-        <router-link to="/cabinet">CABINET</router-link>
-      </div>
-    </nav>
+    <app-header/>
     <router-view/>
     <footer>
-      <router-link to="/about">ABOUT</router-link>
-      <router-link to="/imprint">IMPRINT</router-link>
+      <div class="link"><router-link to="/about">ABOUT</router-link></div> 
+      <div class="link"><router-link to="/imprint">IMPRINT</router-link></div> 
     </footer>
   </div>
 </template>
 
+<script>
+import { TweenMax } from "gsap";
+import AppHeader from "@/components/Header";
+
+export default {
+  components: {
+    AppHeader
+  },
+  mounted() {
+    TweenMax.staggerFrom(
+      ".link",
+      0.5, // duration
+      { y: "+=30", opacity: 0, delay: 0.2 },
+      0.5 // stagger
+    );
+  }
+};
+</script>
+
 <style lang="scss">
-$primary-color: rgb(187, 40, 48);
 * {
   box-sizing: border-box;
 }
@@ -42,23 +52,8 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
-a {
-  color: black;
-  text-decoration: none;
-  transition: color 300ms ease-out;
-  &:hover,
-  &:active {
-    color: $primary-color;
-  }
-  &:first-child {
-    margin-right: 30px;
-  }
-}
-nav {
-  display: flex;
-  justify-content: space-between;
-  font-size: 30px;
-}
 footer {
+  display: flex;
+  justify-content: center;
 }
 </style>
