@@ -44,7 +44,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: bold;
-  text-align: center;
   color: black;
   height: 100%;
   display: flex;

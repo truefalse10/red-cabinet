@@ -1,1 +1,9 @@
 $primary-color: rgb(187, 40, 48);
+
+$md: 768px;
+$lg: 900px;
+@mixin breakpoint($size) {
+  @media screen and (min-width: $size) {
+    @content;
+  }
+}

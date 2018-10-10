@@ -31,6 +31,7 @@ export default {
   display: flex;
   justify-content: space-between;
   font-size: 30px;
+  margin-bottom: 30px;
   a,
   .link {
     color: black;
