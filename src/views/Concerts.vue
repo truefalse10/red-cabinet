@@ -26,7 +26,9 @@
         :src="concert.image.url" 
         :alt="concert.title"> -->
         <h1>{{ parseDate(concert.start_date) }}<br>{{ concert.title }} * {{ concert.venue.venue }}</h1>
-      </li>		
+        <event 
+          :data="concert"/>
+      </li>
     </ul>
   </div>
 </template>
@@ -34,12 +36,16 @@
 <script>
 import axios from 'axios';
 import moment from 'moment';
+import Event from '@/components/Event';
 
 moment.locale('de');
 
 const API_ENDPOINT = 'http://redcabinet.de/wp-json/tribe/events/v1/events';
 export default {
   name: 'Concerts',
+  components: {
+    Event,
+  },
   data: () => ({ concerts: {} }),
   async mounted() {
     this.concerts = (await axios.get(API_ENDPOINT)).data.events;
@@ -57,6 +63,8 @@ export default {
   }
   .concerts {
     list-style: none;
+    max-width: 1000px;
+    margin: 0 auto;
   }
   .concert {
     text-align: center;
