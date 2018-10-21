@@ -22,12 +22,23 @@
         v-for="(concert, index) in concerts" 
         :key="`concert-${index}`" 
         class="concert">
-        <!-- <img 
-        :src="concert.image.url" 
-        :alt="concert.title"> -->
-        <h1>{{ parseDate(concert.start_date) }}<br>{{ concert.title }} * {{ concert.venue.venue }}</h1>
-        <event 
-          :data="concert"/>
+        <h1 
+          :class="{active: active === concert.id}"
+          class="headline" 
+          @click="toggleDetails(concert.id)">{{ parseDate(concert.start_date) }}<br>{{ concert.title }} &#8901; {{ concert.venue.venue }}</h1>
+        <transition name="fade">
+          <div 
+            v-if="active === concert.id"
+            class="details"
+          >
+            <div 
+              class="close" 
+              @click="toggleDetails(concert.id)">X</div>
+            <event 
+              v-if="active === concert.id"
+              :data="concert"/>
+          </div>
+        </transition>
       </li>
     </ul>
   </div>
@@ -46,11 +57,18 @@ export default {
   components: {
     Event,
   },
-  data: () => ({ concerts: {} }),
+  data: () => ({ concerts: {}, active: null }),
   async mounted() {
     this.concerts = (await axios.get(API_ENDPOINT)).data.events;
   },
   methods: {
+    toggleDetails(id) {
+      if (this.active === id) {
+        this.active = null;
+      } else {
+        this.active = id;
+      }
+    },
     parseDate: date => moment(date).format('dd DD.MM.YY'),
   },
 };
@@ -58,6 +76,7 @@ export default {
 
 <style lang="scss" scoped>
 .concerts {
+  // flex: 1 0 auto;
   .svg-filter {
     position: absolute;
   }
@@ -70,9 +89,17 @@ export default {
     text-align: center;
     border-bottom: 1px dotted lightgray;
     padding: 20px 0;
-    > img {
-      width: 100%;
-      filter: grayscale(1);
+    .headline {
+      transition: color 300ms ease-out;
+      cursor: pointer;
+      &.active {
+        color: $primary-color;
+      }
+    }
+    .close {
+      text-align: right;
+      margin-bottom: 10px;
+      cursor: pointer;
     }
     &:hover {
       > img {
@@ -83,5 +110,13 @@ export default {
       border-bottom: none;
     }
   }
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

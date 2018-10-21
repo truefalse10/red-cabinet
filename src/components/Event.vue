@@ -21,11 +21,11 @@
           Beginn: {{ entry }}
         </h2>
         <div class="links">
-          <a 
+          <h2><a 
             v-if="data.website" 
-            :href="data.website">Tickets</a>
-          <a 
-            href="http://facebook.com">Facebook</a>
+            :href="data.website">Tickets</a></h2>
+          <h2><a 
+            href="http://facebook.com">Facebook</a></h2>
         </div>
       </div>
     </div>
