@@ -16,18 +16,18 @@
 
 <script>
 export default {
-  name: "Glitch",
+  name: 'Glitch',
   props: {
     label: {
       type: String,
-      default: ""
-    }
+      default: '',
+    },
   },
   mounted() {
-    this.$refs.button.addEventListener("mouseenter", () => {
+    this.$refs.button.addEventListener('mouseenter', () => {
       this.$refs.audio.play();
     });
-  }
+  },
 };
 </script>
 
@@ -89,7 +89,7 @@ a {
 
   // to prevent jank when :before div slides away from pointer
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     top: 50%;
     left: -18px;

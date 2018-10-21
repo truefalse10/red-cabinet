@@ -17,12 +17,12 @@
 </template>
 
 <script>
-import Glitch from "@/components/Glitch";
+import Glitch from '@/components/Glitch';
 export default {
-  name: "Header",
+  name: 'Header',
   components: {
-    Glitch
-  }
+    Glitch,
+  },
 };
 </script>
 

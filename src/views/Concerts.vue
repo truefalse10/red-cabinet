@@ -25,22 +25,28 @@
         <!-- <img 
         :src="concert.image.url" 
         :alt="concert.title"> -->
-        <h1>{{ concert.date }}<br>{{ concert.title }} * {{ concert.venue.venue }}</h1>
-      </h1></li>		
+        <h1>{{ parseDate(concert.start_date) }}<br>{{ concert.title }} * {{ concert.venue.venue }}</h1>
+      </li>		
     </ul>
   </div>
 </template>
 
 <script>
-import axios from "axios";
+import axios from 'axios';
+import moment from 'moment';
 
-const API_ENDPOINT = "http://redcabinet.de/wp-json/tribe/events/v1/events";
+moment.locale('de');
+
+const API_ENDPOINT = 'http://redcabinet.de/wp-json/tribe/events/v1/events';
 export default {
-  name: "Concerts",
+  name: 'Concerts',
   data: () => ({ concerts: {} }),
   async mounted() {
     this.concerts = (await axios.get(API_ENDPOINT)).data.events;
-  }
+  },
+  methods: {
+    parseDate: date => moment(date).format('dd DD.MM.YY'),
+  },
 };
 </script>
 
@@ -49,8 +55,13 @@ export default {
   .svg-filter {
     position: absolute;
   }
+  .concerts {
+    list-style: none;
+  }
   .concert {
     text-align: center;
+    border-bottom: 1px dotted lightgray;
+    padding: 20px 0;
     > img {
       width: 100%;
       filter: grayscale(1);
@@ -59,6 +70,9 @@ export default {
       > img {
         filter: url(#colorMask1);
       }
+    }
+    &:last-child {
+      border-bottom: none;
     }
   }
 }

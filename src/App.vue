@@ -10,21 +10,21 @@
 </template>
 
 <script>
-import { TweenMax } from "gsap";
-import AppHeader from "@/components/Header";
+import { TweenMax } from 'gsap';
+import AppHeader from '@/components/Header';
 
 export default {
   components: {
-    AppHeader
+    AppHeader,
   },
   mounted() {
     TweenMax.staggerFrom(
-      ".link",
+      '.link',
       0.5, // duration
-      { y: "+=30", opacity: 0, delay: 0.2 },
+      { y: '+=30', opacity: 0, delay: 0.2 },
       0.5 // stagger
     );
-  }
+  },
 };
 </script>
 
