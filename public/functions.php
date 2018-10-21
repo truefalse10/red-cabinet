@@ -15,3 +15,5 @@ function load_vue_scripts() {
     wp_enqueue_script('blankslate/app.js', get_template_directory_uri() . '/js/app.js', null, null, true);
 }
 add_action('wp_enqueue_scripts', 'load_vue_scripts', 100);
+
+add_theme_support( 'post-thumbnails', array('post', 'page', 'tribe_events') );
