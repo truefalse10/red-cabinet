@@ -51,7 +51,7 @@ import Event from '@/components/Event';
 
 moment.locale('de');
 
-const API_ENDPOINT = 'http://redcabinet.de/wp-json/tribe/events/v1/events';
+const API_ENDPOINT = '//redcabinet.de/wp-json/tribe/events/v1/events';
 export default {
   name: 'Concerts',
   components: {
