@@ -1,22 +1,5 @@
 <template>
   <div class="concerts">
-    <svg class="svg-filter">
-      <defs>
-        <filter id="colorMask1">
-          <feFlood 
-            flood-color="#bb2830" 
-            result="flood" />
-          <feComposite 
-            in="SourceGraphic" 
-            in2="flood" 
-            operator="arithmetic" 
-            k1="1" 
-            k2="0" 
-            k3="0" 
-            k4="0" />
-        </filter>
-      </defs>
-    </svg>
     <ul class="concerts">
       <li
         v-for="(concert, index) in concerts" 
@@ -60,6 +43,7 @@ export default {
   data: () => ({ concerts: {}, active: null }),
   async mounted() {
     this.concerts = (await axios.get(API_ENDPOINT)).data.events;
+    // TODO: cache concerts
   },
   methods: {
     toggleDetails(id) {
