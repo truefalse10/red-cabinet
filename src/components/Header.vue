@@ -30,8 +30,9 @@ export default {
 .header {
   display: flex;
   justify-content: space-between;
-  font-size: 30px;
+  font-size: 40px;
   margin-bottom: 30px;
+  font-family: $font-family-header;
   a,
   .link {
     color: black;

@@ -2,20 +2,19 @@
   <div id="app">
     <app-header/>
     <router-view/>
-    <footer>
-      <div class="link"><router-link to="/about">ABOUT</router-link></div> 
-      <div class="link"><router-link to="/imprint">IMPRINT</router-link></div> 
-    </footer>
+    <app-footer/>
   </div>
 </template>
 
 <script>
 import { TweenMax } from 'gsap';
 import AppHeader from '@/components/Header';
+import AppFooter from '@/components/Footer';
 
 export default {
   components: {
     AppHeader,
+    AppFooter,
   },
   mounted() {
     TweenMax.staggerFrom(

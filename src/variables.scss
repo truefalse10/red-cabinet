@@ -1,4 +1,5 @@
 $primary-color: rgb(187, 40, 48);
+$font-family-header: 'Fledgling';
 
 $md: 768px;
 $lg: 900px;
@@ -6,4 +7,8 @@ $lg: 900px;
   @media screen and (min-width: $size) {
     @content;
   }
+}
+@font-face {
+  font-family: $font-family-header;
+  src: url('/fonts/fledgling-sb.ttf') format('truetype');
 }
