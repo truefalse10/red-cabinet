@@ -1,40 +1,48 @@
 <template>
   <div class="eyes">
     <svg 
-      ref="svg"
+      xmlns="http://www.w3.org/2000/svg"
       view-box="0 0 200 100" 
       width="200"
       height="100"
       fill="white"
+      @mousemove="coordinates"
     >
-      <circle 
-        :r="radius" 
-        :stroke-width="stroke" 
-        :cx="cx"
-        :cy="cy"
-        stroke="black"
-      />
-      <circle 
-        :r="radiusPupil" 
-        :stroke-width="stroke" 
-        :cx="cxPupil"
-        :cy="cyPupil"
-        fill="black"
-      />
-      <circle 
-        :r="radius" 
-        :stroke-width="stroke" 
-        cx="150"
-        cy="50"
-        stroke="black"
-      />
-      <circle 
-        :r="radiusPupil" 
-        :stroke-width="stroke" 
-        :cx="cxPupil + 103"
-        :cy="cyPupil"
-        fill="black"
-      />
+      <g
+        :style="style">
+        <circle 
+          :r="radius" 
+          :stroke-width="stroke" 
+          :cx="cx"
+          :cy="cy"
+          stroke="black"
+        />
+        <circle 
+          ref="eye" 
+          :r="radiusPupil" 
+          :stroke-width="stroke"
+          :cx="cx"
+          :cy="cy - 20"
+          fill="black"
+        />
+      </g>
+      <g
+        :style="style">
+        <circle 
+          :r="radius" 
+          :stroke-width="stroke" 
+          :cx="cx + 100"
+          :cy="cy"
+          stroke="black"
+        />
+        <circle 
+          :r="radiusPupil" 
+          :stroke-width="stroke"
+          :cx="cx + 100"
+          :cy="cy - 20"
+          fill="black"
+        />
+      </g>
     </svg>
   </div>
 </template>
@@ -50,6 +58,8 @@ export default {
     cy: 50,
     cxPupil: 47,
     cyPupil: 50,
+    style: 'transform: rotate(0deg)',
+    boundingRect: null,
   }),
   computed: {
     // cxPupil() {
@@ -59,35 +69,35 @@ export default {
     //   return this.cy;
     // },
   },
-	mounted() {
-		document.body.addEventListener('mousemove', this.coordinates);
-	},
+  mounted() {
+    // document.body.addEventListener('mousemove', this.coordinates);
+    this.boundingRect = this.$refs.eye.getBoundingClientRect();
+  },
   methods: {
     coordinates(e) {
-      const { left, top, bottom } = this.$refs.svg.getBoundingClientRect();
+      const { left, top } = this.boundingRect;
       const x = e.clientX;
       const y = e.clientY;
-      this.cxPupil = Math.max(
-        left + this.stroke,
-        Math.min(x, left + 2 * this.radius - 2 * this.stroke - this.radiusPupil)
+      const rad = Math.atan2(
+        x - left - this.radiusPupil,
+        y - top - this.radiusPupil
       );
-      this.cyPupil = Math.max(
-        this.stroke + 4 + this.radiusPupil,
-        Math.min(
-          bottom - top - this.stroke,
-          y - top - this.stroke - this.radiusPupil
-        )
-      );
-      // window.requestAnimationFrame(this.coordinates);
+      const rot = rad * (180 / Math.PI) * -1 + 180;
+      this.style = `transform: rotate(${rot}deg)`;
     },
-	},
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 .eyes {
   > svg {
-    background: grey;
+    g {
+      transform-origin: 25% 50%;
+      &:nth-child(2) {
+        transform-origin: 75% 50%;
+      }
+    }
   }
 }
 </style>
