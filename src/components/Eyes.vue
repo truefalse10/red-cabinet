@@ -60,20 +60,12 @@ export default {
     style: 'transform: rotate(0deg)',
     boundingRect: null,
   }),
-  computed: {
-    // cxPupil() {
-    //   return this.cx;
-    // },
-    // cyPupil() {
-    //   return this.cy;
-    // },
-  },
   mounted() {
     document.body.addEventListener('mousemove', this.coordinates);
-    this.boundingRect = this.$refs.eye.getBoundingClientRect();
   },
   methods: {
     coordinates(e) {
+      this.boundingRect = this.$refs.eye.getBoundingClientRect();
       const { left, top } = this.boundingRect;
       const x = e.clientX;
       const y = e.clientY;
