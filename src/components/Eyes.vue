@@ -6,7 +6,6 @@
       width="200"
       height="100"
       fill="white"
-      @mousemove="coordinates"
     >
       <g
         :style="style">
@@ -70,7 +69,7 @@ export default {
     // },
   },
   mounted() {
-    // document.body.addEventListener('mousemove', this.coordinates);
+    document.body.addEventListener('mousemove', this.coordinates);
     this.boundingRect = this.$refs.eye.getBoundingClientRect();
   },
   methods: {
@@ -91,6 +90,7 @@ export default {
 
 <style lang="scss" scoped>
 .eyes {
+  display: inline-block;
   > svg {
     g {
       transform-origin: 25% 50%;
