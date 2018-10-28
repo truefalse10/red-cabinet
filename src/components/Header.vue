@@ -8,12 +8,17 @@
         label="RED CABINET"
       />
     </div>
+    <burger-menu 
+      :menu-items="menuItems" 
+      class="mobile-menu" />
     <div class="right">
-      <div class="link">
-        <router-link to="/concerts">CONCERTS</router-link>
-      </div>
-      <div class="link">
-        <router-link to="/cabinet">CABINET</router-link>
+      <div 
+        v-for="(item, index) in menuItems" 
+        :key="index"
+        :class="{ active: $route.path === item.to }"
+        class="link">
+        <router-link 
+          :to="item.to">{{ item.label }}</router-link>
       </div>
     </div>
     <eyes 
@@ -25,13 +30,27 @@
 <script>
 import Glitch from '@/components/Glitch';
 import Eyes from '@/components/Eyes';
+import BurgerMenu from '@/components/BurgerMenu';
+
+const menuItems = [
+  {
+    to: '/concerts',
+    label: 'CONCERTS',
+  },
+  {
+    to: '/cabinet',
+    label: 'CABINET',
+  },
+];
 
 export default {
   name: 'Header',
   components: {
     Glitch,
     Eyes,
+    BurgerMenu,
   },
+  data: () => ({ menuItems }),
 };
 </script>
 
@@ -42,17 +61,21 @@ export default {
   font-size: 40px;
   margin-bottom: 30px;
   font-family: $font-family-header;
-  a,
-  .link {
+  .link a {
     color: black;
     text-decoration: none;
     transition: color 150ms ease-out;
     &:hover,
     &:active {
-      color: $primary-color;
+      text-decoration: underline;
     }
     &:first-child {
       margin-right: 30px;
+    }
+  }
+  .mobile-menu {
+    @include breakpoint($md) {
+      display: none;
     }
   }
   .right {
