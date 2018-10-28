@@ -56,7 +56,10 @@ export default {
     }
   }
   .right {
-    display: flex;
+    display: none;
+    @include breakpoint($md) {
+      display: flex;
+    }
   }
   .eyes {
     position: absolute;
