@@ -8,6 +8,8 @@
     <div class="link"><router-link to="/imprint">ARCHIVE</router-link></div> 
     <modal 
       name="subscribe" 
+      adaptive
+      width="400px"
       height="auto">
       <subscribe/>
     </modal>
@@ -32,10 +34,10 @@ export default {
 
 <style lang="scss" scoped>
 footer {
-  font-family: $font-family-header;
-  font-size: 20px;
   .link,
   a {
+    font-family: $font-family-header;
+    font-size: 20px;
     cursor: pointer;
     color: black;
     text-decoration: none;

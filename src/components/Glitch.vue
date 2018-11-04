@@ -8,9 +8,9 @@
     <div class="mask"><span>{{ label }}</span></div>
     <div class="mask"><span>{{ label }}</span></div>
     <div class="mask"><span>{{ label }}</span></div>
-    <audio ref="audio">
+    <!-- <audio ref="audio">
       <source src="/glitch.mp3">
-    </audio>
+    </audio> -->
   </span>
 </template>
 
@@ -23,11 +23,11 @@ export default {
       default: '',
     },
   },
-  mounted() {
-    this.$refs.button.addEventListener('mouseenter', () => {
-      this.$refs.audio.play();
-    });
-  },
+  // mounted() {
+  //   this.$refs.button.addEventListener('mouseenter', () => {
+  //     this.$refs.audio.play();
+  //   });
+  // },
 };
 </script>
 
