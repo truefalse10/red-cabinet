@@ -9,14 +9,14 @@
     <modal 
       name="subscribe" 
       adaptive
-      width="400px"
-      height="323px">
+      width="500px"
+      height="400px">
       <iframe 
         frameborder="0" 
         scrolling="no" 
         marginheight="0" 
         marginwidth="0" 
-        src="https://email-marketing.ionos.de/widget/iframe/3tUu/9HP" 
+        src="https://email-marketing.ionos.de/widget/iframe/3tUu/a3X" 
         width="100%" 
         height="100%"/>
         <!-- <subscribe/> -->

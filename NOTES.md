@@ -22,3 +22,5 @@
 # Wolfi
 
 - about text
+- text unter newsletter subscribe button
+- text bestätigungsmail
