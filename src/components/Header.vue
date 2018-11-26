@@ -64,8 +64,11 @@ export default {
   font-weight: normal;
   .link a {
     color: black;
-    text-decoration: none;
     transition: color 150ms ease-out;
+    text-decoration: none;
+    &.router-link-active {
+      text-decoration: underline;
+    }
     &:hover,
     &:active {
       color: $primary-color;
