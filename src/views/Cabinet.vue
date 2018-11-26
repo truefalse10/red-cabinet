@@ -2,13 +2,20 @@
   <div class="cabinet">
     <h1>Next Cabinet<br>19.11.18</h1>
     <h1>For further<br>informations<br>and entry:</h1>
-    <app-button white>Subscribe</app-button>
+    <app-button 
+      white 
+      @click="showSubscribe">Subscribe</app-button>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Cabinet',
+  methods: {
+    showSubscribe() {
+      this.$modal.show('subscribe');
+    },
+  },
 };
 </script>
 
