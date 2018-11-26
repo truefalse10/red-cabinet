@@ -1,25 +1,46 @@
 <template>
   <div class="concerts">
+    <svg class="svg-filter">
+      <defs>
+        <filter id="colorMask1">
+          <feFlood 
+            flood-color="#bb2830" 
+            result="flood" />
+          <feComposite 
+            in="SourceGraphic" 
+            in2="flood" 
+            operator="arithmetic" 
+            k1="1" 
+            k2="0" 
+            k3="0" 
+            k4="0" />
+        </filter>
+      </defs>
+    </svg>
     <ul class="concerts">
       <li
         v-for="(concert, index) in concerts" 
         :key="`concert-${index}`" 
-        class="concert">
-        <h1 
-          :class="{active: active === concert.id}"
-          class="headline" 
-          @click="toggleDetails(concert.id)">{{ parseDate(concert.start_date) }}<br>{{ concert.title }} &#8901; {{ concert.venue.venue }}</h1>
+        class="concert"
+        @click="toggleDetails(concert.id)">
+        <div class="hover-wrapper">
+          <img 
+            :src="concert.image.url"
+            class="image" 
+            alt="">
+          <h1 
+            :class="{active: active === concert.id}"
+            class="headline">{{ parseDate(concert.start_date) }} &#8901; {{ concert.title }} &#8901; {{ concert.venue.venue }}</h1>
+        </div>
         <transition name="fade">
           <div 
             v-if="active === concert.id"
             class="details"
           >
-            <div 
-              class="close" 
-              @click="toggleDetails(concert.id)">X</div>
             <event 
               v-if="active === concert.id"
-              :data="concert"/>
+              :data="concert"
+              @close="toggleDetails(concert.id)"/>
           </div>
         </transition>
       </li>
@@ -60,7 +81,6 @@ export default {
 
 <style lang="scss" scoped>
 .concerts {
-  // flex: 1 0 auto;
   .svg-filter {
     position: absolute;
   }
@@ -73,21 +93,25 @@ export default {
     text-align: center;
     border-bottom: 1px dotted lightgray;
     padding: 20px 0;
+    h1 {
+      font-size: $font-size-base;
+      margin-bottom: 12px;
+    }
+    .hover-wrapper:hover {
+      cursor: pointer;
+      .image {
+        filter: url(#colorMask1);
+      }
+    }
+    .image {
+      width: 100%;
+      margin-bottom: 5px;
+    }
     .headline {
       transition: color 300ms ease-out;
       cursor: pointer;
       &.active {
         color: $primary-color;
-      }
-    }
-    .close {
-      text-align: right;
-      margin-bottom: 10px;
-      cursor: pointer;
-    }
-    &:hover {
-      > img {
-        filter: url(#colorMask1);
       }
     }
     &:last-child {

@@ -1,11 +1,9 @@
 <template>
   <div class="event">
+    <div 
+      class="close" 
+      @click="$emit('close')">X</div>
     <div class="info-wrapper">
-      <img 
-        :src="data.image.url"
-        class="image" 
-        alt="">
-
       <div class="info">
         <h2>
           {{ date }}<br>
@@ -59,22 +57,35 @@ export default {
   text-align: left;
   display: flex;
   font-weight: 300;
+  flex-direction: column;
+  border: 4px solid black;
+  padding: 4px 10px 10px 10px;
+  @include breakpoint($md) {
+    flex-direction: row;
+  }
   > div {
     flex-basis: 50%;
   }
+  .close {
+    text-align: right;
+    cursor: pointer;
+  }
   .info-wrapper {
+    margin-bottom: 8px;
+    h2 {
+      font-size: $font-size-base;
+      margin-bottom: 12px;
+    }
     flex-shrink: 0;
     .info {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-row-gap: 10px;
-      > :nth-child(even) {
-        text-align: right;
+      @include breakpoint($md) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 10px;
+        > :nth-child(even) {
+          text-align: right;
+        }
       }
-    }
-    .image {
-      width: 100%;
-      margin-bottom: 10px;
     }
     .links {
       > a {
@@ -84,7 +95,7 @@ export default {
   }
   .description {
     font-weight: 300;
-    margin-left: 30px;
+    font-size: $font-size-base;
   }
 }
 </style>
