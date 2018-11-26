@@ -61,13 +61,14 @@ export default {
   font-size: 40px;
   margin-bottom: 30px;
   font-family: $font-family-header;
+  font-weight: normal;
   .link a {
     color: black;
     text-decoration: none;
     transition: color 150ms ease-out;
     &:hover,
     &:active {
-      text-decoration: underline;
+      color: $primary-color;
     }
     &:first-child {
       margin-right: 30px;
@@ -94,7 +95,11 @@ export default {
     justify-content: center;
     transition: all 500ms ease-out;
     pointer-events: none;
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
     &.large {
+      display: flex;
       transform: scale(1);
       top: 40%;
     }

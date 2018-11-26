@@ -10,8 +10,16 @@
       name="subscribe" 
       adaptive
       width="400px"
-      height="auto">
-      <subscribe/>
+      height="323px">
+      <iframe 
+        frameborder="0" 
+        scrolling="no" 
+        marginheight="0" 
+        marginwidth="0" 
+        src="https://email-marketing.ionos.de/widget/iframe/3tUu/9HP" 
+        width="100%" 
+        height="100%"/>
+        <!-- <subscribe/> -->
     </modal>
   </footer>
 </template>
@@ -37,6 +45,7 @@ footer {
   .link,
   a {
     font-family: $font-family-header;
+    font-weight: normal;
     font-size: 20px;
     cursor: pointer;
     color: black;

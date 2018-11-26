@@ -84,7 +84,7 @@ a {
   $hoverDur: 0.8s;
   transition: all $hoverDur ease-out;
   &:hover {
-    color: red;
+    color: $primary-color;
   }
 
   // to prevent jank when :before div slides away from pointer
