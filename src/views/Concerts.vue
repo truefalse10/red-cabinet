@@ -21,9 +21,10 @@
       <li
         v-for="(concert, index) in concerts" 
         :key="`concert-${index}`" 
-        class="concert"
-        @click="toggleDetails(concert.id)">
-        <div class="hover-wrapper">
+        class="concert">
+        <div 
+          class="hover-wrapper" 
+          @click="toggleDetails(concert.id)">
           <img 
             :src="concert.image.url"
             class="image" 
@@ -93,6 +94,9 @@ export default {
     text-align: center;
     border-bottom: 1px dotted lightgray;
     padding: 20px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     h1 {
       font-size: $font-size-base;
       margin-bottom: 12px;
@@ -106,6 +110,9 @@ export default {
     .image {
       width: 100%;
       margin-bottom: 5px;
+      @include breakpoint(450px) {
+        max-width: 300px;
+      }
     }
     .headline {
       transition: color 300ms ease-out;

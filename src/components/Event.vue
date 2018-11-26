@@ -3,33 +3,34 @@
     <div 
       class="close" 
       @click="$emit('close')">X</div>
-    <div class="info-wrapper">
-      <div class="info">
-        <h2>
-          {{ date }}<br>
-          {{ data.title }}
-        </h2>
-        <h2>
-          {{ data.venue.venue }}<br>
-          {{ data.venue.address }}<br>
-          {{ data.venue.zip }} {{ data.venue.city }}
-        </h2>
-        <h2>
-          Einlass: {{ entry }}<br>
-          Beginn: {{ entry }}
-        </h2>
-        <div class="links">
-          <h2><a 
-            v-if="data.website" 
-            :href="data.website">Tickets</a></h2>
-          <h2><a 
-            href="http://facebook.com">Facebook</a></h2>
+    <div class="content">
+      <div class="info-wrapper">
+        <div class="info">
+          <!--  TODO: add support -->
+          <h2>
+            {{ data.venue.venue }}<br>
+            {{ data.venue.address }}<br>
+            {{ data.venue.zip }} {{ data.venue.city }}
+          </h2>
+          <h2>
+            Einlass: {{ entry }}
+            <!--  TODO: add Beginn -->
+          </h2>
+          <div class="links">
+            <!--  TODO: style arrow and link -->
+            <!--  TODO: add Anfahrt -->
+            <h2><a 
+              v-if="data.website" 
+              :href="data.website">Tickets</a></h2>
+            <h2><a 
+              href="http://facebook.com">Facebook</a></h2>
+          </div>
         </div>
       </div>
+      <p
+        class="description" 
+        v-html="data.description"/>
     </div>
-    <p
-      class="description" 
-      v-html="data.description"/>
   </div>
 </template>
 
@@ -42,9 +43,6 @@ export default {
     data: Object,
   },
   computed: {
-    date() {
-      return moment(this.data.start_date).format('dd DD.MM.YY');
-    },
     entry() {
       return moment(this.data.start_date).format('hh:mm');
     },
@@ -54,42 +52,37 @@ export default {
 
 <style lang="scss" scoped>
 .event {
-  text-align: left;
-  display: flex;
-  font-weight: 300;
-  flex-direction: column;
   border: 4px solid black;
   padding: 4px 10px 10px 10px;
   @include breakpoint($md) {
+    padding: 4px 20px 20px 20px;
     flex-direction: row;
-  }
-  > div {
-    flex-basis: 50%;
   }
   .close {
     text-align: right;
     cursor: pointer;
   }
+  .content {
+    text-align: left;
+    display: flex;
+    font-weight: 300;
+    flex-direction: column;
+    @include breakpoint($md) {
+      flex-direction: row;
+    }
+  }
   .info-wrapper {
+    flex-basis: 20%;
     margin-bottom: 8px;
     h2 {
       font-size: $font-size-base;
       margin-bottom: 12px;
     }
     flex-shrink: 0;
-    .info {
-      @include breakpoint($md) {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-row-gap: 10px;
-        > :nth-child(even) {
-          text-align: right;
-        }
-      }
-    }
     .links {
-      > a {
+      a {
         display: block;
+        color: black;
       }
     }
   }

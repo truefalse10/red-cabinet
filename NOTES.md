@@ -11,3 +11,8 @@
 - kein rot verwenden
 - text für disclaimer
 - link datenschutzrichtlinien
+
+## Nadine
+
+- icon close x
+- icon cursor pfeil
