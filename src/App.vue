@@ -1,9 +1,10 @@
 <template>
-  <div id="app">
+  <div 
+    id="app" 
+    :class="{ cabinet: $route.name === 'Cabinet'}">
     <app-header/>
     <keep-alive>
       <router-view/>
-
     </keep-alive>
     <app-footer/>
   </div>
@@ -54,6 +55,10 @@ body {
   padding: 20px;
   flex-direction: column;
   justify-content: space-between;
+  transition: background 300ms ease-out;
+  &.cabinet {
+    background-color: $primary-color;
+  }
 }
 footer {
   display: flex;
