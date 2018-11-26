@@ -16,3 +16,9 @@
 
 - icon close x
 - icon cursor pfeil
+- hintergrundbild cabinet
+- font sizes (regular text...)
+
+# Wolfi
+
+- about text
