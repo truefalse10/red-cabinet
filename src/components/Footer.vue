@@ -4,6 +4,7 @@
     <div 
       class="link" 
       @click="showSubscribe">SUBSCRIBE</div> 
+    <div class="link"><router-link to="/faq">FAQ</router-link></div> 
     <div class="link"><router-link to="/imprint">IMPRINT</router-link></div> 
     <modal 
       name="subscribe" 

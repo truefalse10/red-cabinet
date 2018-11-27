@@ -5,6 +5,7 @@ import Concerts from './views/Concerts.vue';
 import About from './views/About.vue';
 import Cabinet from './views/Cabinet.vue';
 import Imprint from '@/views/Imprint';
+import Faq from '@/views/Faq';
 
 Vue.use(Router);
 
@@ -36,6 +37,11 @@ export default new Router({
       path: '/imprint',
       name: 'Imprint',
       component: Imprint,
+    },
+    {
+      path: '/faq',
+      name: 'FAQ',
+      component: Faq,
     },
   ],
 });

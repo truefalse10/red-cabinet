@@ -79,4 +79,16 @@ input[type='reset'] {
   cursor: pointer;
   outline: inherit;
 }
+.legal {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-size: 13px;
+  font-weight: normal;
+  h3 {
+    margin-bottom: 4px;
+  }
+  p {
+    margin-bottom: 10px;
+  }
+}
 </style>

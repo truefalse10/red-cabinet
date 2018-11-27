@@ -7,9 +7,9 @@ import AppButton from './components/AppButton';
 import router from './router';
 
 Vue.config.productionTip = false;
-Vue.use(VueMarkdown);
 Vue.use(VModal);
 Vue.component('app-button', AppButton);
+Vue.component('vue-markdown', VueMarkdown);
 
 new Vue({
   router,
