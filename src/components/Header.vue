@@ -1,12 +1,15 @@
 <template>
   <nav class="header">
-    <div class="left" 
-@click="() => $router.push('/')">
-      <glitch class="link" 
-label="RED CABINET"/>
+    <div 
+      class="left" 
+      @click="() => $router.push('/')">
+      <glitch 
+        class="link" 
+        label="RED CABINET"/>
     </div>
-    <burger-menu :menu-items="menuItems" 
-class="mobile-menu"/>
+    <burger-menu 
+      :menu-items="menuItems" 
+      class="mobile-menu"/>
     <div class="right">
       <div
         v-for="(item, index) in menuItems"
@@ -17,8 +20,9 @@ class="mobile-menu"/>
         <router-link :to="item.to">{{ item.label }}</router-link>
       </div>
     </div>
-    <eyes :class="{ large: $route.name === 'home' }" 
-class="eyes"/>
+    <eyes 
+      :class="{ large: $route.name === 'home' }" 
+      class="eyes"/>
   </nav>
 </template>
 
@@ -86,8 +90,8 @@ export default {
   }
   .eyes {
     position: absolute;
-    transform: scale(0.3);
-    top: -4px;
+    transform: scale(0.6);
+    top: 4px;
     left: 0;
     width: 100%;
     display: flex;
@@ -99,7 +103,7 @@ export default {
     }
     &.large {
       display: flex;
-      transform: scale(1);
+      transform: scale(1.4);
       top: 40%;
     }
   }

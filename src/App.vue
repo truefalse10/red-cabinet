@@ -1,5 +1,7 @@
 <template>
-  <div id="app" :class="{ cabinet: $route.name === 'Cabinet'}">
+  <div 
+    id="app" 
+    :class="{ cabinet: $route.name === 'Cabinet'}">
     <app-header/>
     <keep-alive>
       <router-view/>
