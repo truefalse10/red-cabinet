@@ -1,16 +1,30 @@
 <template>
   <div class="about">
-    <p>Kunst entdecken, Musik erleben, Gemeinschaft spüren und Extase fühlen.</p>
-    <p>Ob Konzerte oder unsere besonderen Red Cabinet Events. Wir präsentieren Euch außergewöhnliche Abende an außergewöhnlichen Orten.</p>
-    <p>Neugierig geworden?</p>
+    <vue-markdown :source="file"/>
+    <app-button 
+      @click="showSubscribe">Subscribe</app-button>
   </div>
 </template>
+<script>
+import file from 'raw-loader!@/texts/about.md';
+
+export default {
+  name: 'About',
+  data: () => ({ file }),
+  methods: {
+    showSubscribe() {
+      this.$modal.show('subscribe');
+    },
+  },
+};
+</script>
+
 <style lang="scss" scoped>
 .about {
   display: flex;
   flex-direction: column;
   align-items: center;
-  p {
+  & /deep/ p {
     font-size: 18px;
     font-weight: normal;
     text-align: center;

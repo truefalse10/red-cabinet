@@ -43,8 +43,8 @@ export default {
 }
 html,
 body {
-  height: 100%;
-  height: 100vh;
+  min-height: 100%;
+  min-height: 100vh;
   padding: 0;
   margin: 0;
 }
@@ -54,7 +54,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-weight: bold;
   color: black;
-  height: 100%;
+  min-height: 100vh;
   display: flex;
   padding: 20px;
   flex-direction: column;
@@ -84,6 +84,7 @@ input[type='reset'] {
   padding-bottom: 30px;
   font-size: 13px;
   font-weight: normal;
+  width: 100%;
   max-width: 1000px;
   margin: 0 auto;
   h1 {

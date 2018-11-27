@@ -25,6 +25,10 @@ export default {
   text-transform: uppercase;
   padding: 0 18px;
   font-weight: normal;
+  &:hover {
+    border-color: $primary-color;
+    color: $primary-color;
+  }
   &.white {
     color: white;
     border-color: white;

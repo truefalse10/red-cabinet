@@ -53,8 +53,10 @@ footer {
     text-decoration: none;
     transition: color 150ms ease-out;
     margin: 0 5px;
-    &:hover,
-    &:active {
+    &.router-link-active {
+      text-decoration: underline;
+    }
+    &:hover {
       color: $primary-color;
     }
   }
