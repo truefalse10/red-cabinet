@@ -24,6 +24,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 30px;
   & /deep/ p {
     font-size: 18px;
     font-weight: normal;
