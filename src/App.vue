@@ -67,6 +67,7 @@ body {
 footer {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 button,
 input[type='submit'],
