@@ -4,6 +4,7 @@ import Home from './views/Home.vue';
 import Concerts from './views/Concerts.vue';
 import About from './views/About.vue';
 import Cabinet from './views/Cabinet.vue';
+import Imprint from '@/views/Imprint';
 
 Vue.use(Router);
 
@@ -30,6 +31,11 @@ export default new Router({
       path: '/cabinet',
       name: 'Cabinet',
       component: Cabinet,
+    },
+    {
+      path: '/imprint',
+      name: 'Imprint',
+      component: Imprint,
     },
   ],
 });
