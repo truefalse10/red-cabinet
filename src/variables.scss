@@ -9,7 +9,3 @@ $lg: 900px;
     @content;
   }
 }
-@font-face {
-  font-family: $font-family-header;
-  src: url('/fonts/fledgling-sb.ttf') format('truetype');
-}

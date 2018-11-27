@@ -32,6 +32,10 @@ export default {
 </script>
 
 <style lang="scss">
+@font-face {
+  font-family: $font-family-header;
+  src: url('./assets/fonts/fledgling-sb.ttf') format('truetype');
+}
 * {
   box-sizing: border-box;
   padding: 0;
