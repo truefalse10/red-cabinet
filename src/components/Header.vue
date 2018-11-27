@@ -20,9 +20,13 @@
         <router-link :to="item.to">{{ item.label }}</router-link>
       </div>
     </div>
-    <eyes 
-      :class="{ large: $route.name === 'home' }" 
-      class="eyes"/>
+    <div 
+      :class="{ top: $route.name !== 'home' }" 
+      class="eyes-wrapper">
+      <eyes 
+        :class="{ large: $route.name === 'home' }" 
+        class="eyes"/>
+    </div>
   </nav>
 </template>
 
@@ -88,23 +92,34 @@ export default {
       display: flex;
     }
   }
-  .eyes {
+  .eyes-wrapper {
     position: absolute;
-    transform: scale(0.6);
-    top: 4px;
+    align-items: center;
+    top: -4px;
     left: 0;
+    transform: translateY(40vh);
     width: 100%;
     display: flex;
     justify-content: center;
-    transition: all 500ms ease-out;
     pointer-events: none;
+    transition: all 500ms ease-out;
+    &.top {
+      transform: translateY(0);
+      opacity: 0;
+      @include breakpoint($md) {
+        opacity: 1;
+      }
+    }
+  }
+  .eyes {
+    transform: scale(0.6);
+    transition: all 500ms ease-out;
     @media screen and (max-width: 768px) {
       display: none;
     }
     &.large {
       display: flex;
       transform: scale(1.4);
-      top: 40%;
     }
   }
 }

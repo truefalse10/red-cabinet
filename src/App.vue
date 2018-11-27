@@ -92,6 +92,9 @@ input[type='reset'] {
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
+  a {
+    word-break: break-all;
+  }
   h1 {
     text-align: center;
     margin-bottom: 12px;
