@@ -4,6 +4,9 @@
     <div 
       class="link" 
       @click="showSubscribe">SUBSCRIBE</div> 
+    <div class="link"><a 
+      href="https://www.facebook.com/redcabinet/" 
+      target="_blank">FACEBOOK</a></div>
     <div class="link"><router-link to="/privacy">PRIVACY</router-link></div> 
     <div class="link"><router-link to="/faq">FAQ</router-link></div> 
     <div class="link"><router-link to="/imprint">IMPRINT</router-link></div> 
