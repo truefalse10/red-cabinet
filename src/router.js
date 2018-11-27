@@ -6,12 +6,17 @@ import About from './views/About.vue';
 import Cabinet from './views/Cabinet.vue';
 import Imprint from '@/views/Imprint';
 import Faq from '@/views/Faq';
+import Privacy from '@/views/Privacy';
 
 Vue.use(Router);
 
 export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
+  scrollBehavior: (to, from, savedPosition) => {
+    if (savedPosition) return savedPosition;
+    return { x: 0, y: 0 };
+  },
   routes: [
     {
       path: '/',
@@ -42,6 +47,11 @@ export default new Router({
       path: '/faq',
       name: 'FAQ',
       component: Faq,
+    },
+    {
+      path: '/privacy',
+      name: 'Privacy Policy',
+      component: Privacy,
     },
   ],
 });

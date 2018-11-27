@@ -84,11 +84,21 @@ input[type='reset'] {
   padding-bottom: 30px;
   font-size: 13px;
   font-weight: normal;
+  max-width: 1000px;
+  margin: 0 auto;
+  h1 {
+    text-align: center;
+    margin-bottom: 12px;
+  }
   h3 {
     margin-bottom: 4px;
   }
   p {
     margin-bottom: 10px;
+  }
+  ol {
+    font-weight: bold;
+    margin-bottom: 8px;
   }
 }
 </style>

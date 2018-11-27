@@ -1,3 +1,5 @@
+# Häufig gestellte Fragen
+
 ### Allgemeine Hinweise zum Ticketkauf
 
 In München gilt bei Konzerten generell das Jugendschutzgesetz wie folgt: Nach § 7 JuSchG dürfen Kinder unter 6 Jahren -auch in Begleitung von Erziehungsberechtigten oder erziehungsbeauftragten Personen- nicht zur Veranstaltung eingelassen werden. Kinder zwischen 6 und unter 14 Jahren dürfen nur in Begleitung einer personensorgeberechtigten oder einer erziehungsbeauftragten Person eingelassen werden. Jugendliche ab dem vollendeten 14. Lebensjahr dürfen ohne Begleitung personensorgeberechtigter oder erziehungsbeauftragter Personen eingelassen werden. Für Kinderveranstaltung gelten manchmal Ausnahmeregelungen. Bitte fragen Sie bei der Bestellung nach, sollten Kinder unter 14 Jahren die Veranstaltung besuchen wollen. Der Eintritt zu den Cabinet Veranstaltungen ist ab 18 Jahren.
