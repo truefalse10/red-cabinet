@@ -1,7 +1,5 @@
 <template>
-  <div 
-    id="app" 
-    :class="{ cabinet: $route.name === 'Cabinet'}">
+  <div id="app" :class="{ cabinet: $route.name === 'Cabinet'}">
     <app-header/>
     <keep-alive>
       <router-view/>
@@ -61,7 +59,11 @@ body {
   justify-content: space-between;
   transition: background 300ms ease-out;
   &.cabinet {
-    background-color: $primary-color;
+    background-image: url('./assets/kbb_small.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: white;
   }
 }
 footer {

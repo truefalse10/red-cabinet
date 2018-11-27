@@ -1,29 +1,24 @@
 <template>
   <nav class="header">
-    <div 
-      class="left"
-      @click="() => $router.push('/')">
-      <glitch 
-        class="link" 
-        label="RED CABINET"
-      />
+    <div class="left" 
+@click="() => $router.push('/')">
+      <glitch class="link" 
+label="RED CABINET"/>
     </div>
-    <burger-menu 
-      :menu-items="menuItems" 
-      class="mobile-menu" />
+    <burger-menu :menu-items="menuItems" 
+class="mobile-menu"/>
     <div class="right">
-      <div 
-        v-for="(item, index) in menuItems" 
+      <div
+        v-for="(item, index) in menuItems"
         :key="index"
         :class="{ active: $route.path === item.to }"
-        class="link">
-        <router-link 
-          :to="item.to">{{ item.label }}</router-link>
+        class="link"
+      >
+        <router-link :to="item.to">{{ item.label }}</router-link>
       </div>
     </div>
-    <eyes 
-      :class="{ large: $route.name === 'home' }"
-      class="eyes"/>
+    <eyes :class="{ large: $route.name === 'home' }" 
+class="eyes"/>
   </nav>
 </template>
 
@@ -64,6 +59,7 @@ export default {
   font-weight: normal;
   .link a {
     color: black;
+    color: inherit;
     transition: color 150ms ease-out;
     text-decoration: none;
     &.router-link-active {

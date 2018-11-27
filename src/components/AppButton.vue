@@ -1,9 +1,6 @@
 <template>
-  <button 
-    :class="{ white }" 
-    class="app-button"
-    @click="$emit('click')">
-    <slot/>	
+  <button :class="{ white }" class="app-button" @click="$emit('click')">
+    <slot/>
   </button>
 </template>
 
@@ -25,6 +22,7 @@ export default {
   text-transform: uppercase;
   padding: 0 18px;
   font-weight: normal;
+  transition: all 300ms ease-out;
   &:hover {
     border-color: $primary-color;
     color: $primary-color;
@@ -32,6 +30,10 @@ export default {
   &.white {
     color: white;
     border-color: white;
+    &:hover {
+      border-color: $primary-color;
+      color: $primary-color;
+    }
   }
 }
 </style>
