@@ -1,6 +1,6 @@
 <template>
   <div class="cabinet">
-    <h1>Next Cabinet<br>19.11.18</h1>
+    <h1>Next Cabinet<br>19.01.19</h1>
     <h1>For further<br>informations<br>and entry:</h1>
     <app-button 
       white 
