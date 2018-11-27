@@ -3,12 +3,16 @@
     <div class="link">
       <router-link to="/about">ABOUT</router-link>
     </div>
-    <div class="link" @click="showSubscribe">SUBSCRIBE</div>
+    <div 
+      class="link" 
+      @click="showSubscribe">SUBSCRIBE</div>
     <div class="link">
-      <a href="https://www.facebook.com/redcabinet/" target="_blank">FACEBOOK</a>
+      <a 
+        href="https://www.facebook.com/redcabinet/" 
+        target="_blank">FACEBOOK</a>
     </div>
     <div class="link">
-      <router-link to="/privacy">PRIVACY</router-link>
+      <router-link to="/privacy">PRIVACY POLICY</router-link>
     </div>
     <div class="link">
       <router-link to="/faq">FAQ</router-link>
@@ -16,7 +20,11 @@
     <div class="link">
       <router-link to="/imprint">IMPRINT</router-link>
     </div>
-    <modal name="subscribe" adaptive width="500px" height="400px">
+    <modal 
+      name="subscribe" 
+      adaptive 
+      width="500px" 
+      height="400px">
       <iframe
         frameborder="0"
         scrolling="no"
@@ -26,7 +34,6 @@
         width="100%"
         height="100%"
       />
-      <!-- <subscribe/> -->
     </modal>
   </footer>
 </template>
