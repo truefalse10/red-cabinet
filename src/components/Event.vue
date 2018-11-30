@@ -23,7 +23,7 @@
               v-if="data.website" 
               :href="data.website">Tickets</a></h2>
             <h2><a 
-              href="http://facebook.com">Facebook</a></h2>
+              href="https://www.facebook.com/events/246187189458042">Facebook</a></h2>
           </div>
         </div>
       </div>
