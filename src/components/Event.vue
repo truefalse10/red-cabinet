@@ -44,7 +44,7 @@ export default {
   },
   computed: {
     entry() {
-      return moment(this.data.start_date).format('hh:mm');
+      return moment(this.data.start_date).format('HH:mm');
     },
   },
 };
