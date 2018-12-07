@@ -15,6 +15,7 @@ export default {
   data: () => ({ file }),
   methods: {
     showSubscribe() {
+      this.$ga.event('subscribe', 'click', 'cabinet');
       this.$modal.show('subscribe');
     },
   },

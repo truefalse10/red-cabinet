@@ -9,7 +9,8 @@
     <div class="link">
       <a 
         href="https://www.facebook.com/redcabinet/" 
-        target="_blank">FACEBOOK</a>
+        target="_blank"
+        @click="$ga.event('facebook', 'click', 'footer')">FACEBOOK</a>
     </div>
     <div class="link">
       <router-link to="/privacy">PRIVACY POLICY</router-link>
@@ -48,6 +49,7 @@ export default {
   },
   methods: {
     showSubscribe() {
+      this.$ga.event('subscribe', 'click', 'footer');
       this.$modal.show('subscribe');
     },
   },

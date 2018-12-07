@@ -1,5 +1,8 @@
 <template>
-  <button :class="{ white }" class="app-button" @click="$emit('click')">
+  <button 
+    :class="{ white }" 
+    class="app-button" 
+    @click="$emit('click')">
     <slot/>
   </button>
 </template>
