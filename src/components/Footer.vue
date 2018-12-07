@@ -13,6 +13,12 @@
         @click="$ga.event('facebook', 'click', 'footer')">FACEBOOK</a>
     </div>
     <div class="link">
+      <a 
+        href="https://www.instagram.com/red_cabinet/" 
+        target="_blank"
+        @click="$ga.event('instagram', 'click', 'footer')">INSTAGRAM</a>
+    </div>
+    <div class="link">
       <router-link to="/privacy">PRIVACY POLICY</router-link>
     </div>
     <div class="link">
