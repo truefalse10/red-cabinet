@@ -21,11 +21,18 @@ export default {
   color: black;
   border: 3px solid black;
   font-family: $font-family-header;
-  font-size: 28px;
+  font-size: 34px;
   text-transform: uppercase;
-  padding: 0 18px;
+  padding: 0 30px;
   font-weight: normal;
   transition: all 300ms ease-out;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  min-width: 200px;
+  @include breakpoint($md) {
+    font-size: 50px;
+  }
   &:hover {
     border-color: $primary-color;
     color: $primary-color;

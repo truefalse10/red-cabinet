@@ -2,9 +2,15 @@
   <div class="cabinet">
     <p class="next">Next Cabinet:<br>19.01.19</p>
     <vue-markdown :source="file"/>
-    <app-button 
-      white 
-      @click="showSubscribe">Subscribe</app-button>
+    <p class="small">Read more about or subscribe for further<br>informations and entry</p>
+    <div class="buttons">
+      <app-button 
+        white 
+        @click="$router.push({ name: 'about' })">About</app-button>
+      <app-button 
+        white 
+        @click="showSubscribe">Subscribe</app-button>
+    </div>
   </div>
 </template>
 
@@ -33,6 +39,14 @@ export default {
   .next {
     margin-bottom: 80px;
   }
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include breakpoint($md) {
+      flex-direction: row;
+    }
+  }
   & /deep/ {
     p {
       margin-bottom: 20px;
@@ -44,6 +58,13 @@ export default {
       max-width: 800px;
       @include breakpoint($md) {
         font-size: 40px;
+      }
+      &.small {
+        font-size: 24px;
+        font-weight: 100;
+        @include breakpoint($md) {
+          font-size: 26px;
+        }
       }
     }
   }
