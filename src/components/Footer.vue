@@ -29,19 +29,10 @@
     </div>
     <modal 
       name="subscribe" 
-      adaptive 
-      width="500px" 
-      height="400px">
-      <!-- <iframe
-        frameborder="0"
-        scrolling="no"
-        marginheight="0"
-        marginwidth="0"
-        src="https://email-marketing.ionos.de/widget/iframe/3tUu/a3X"
-        width="100%"
-        height="100%"
-      /> -->
-      <!-- <mailchimp-form/> -->
+      width="450px" 
+      height="auto"
+      scrollable
+      adaptive>
       <subscribe/>
     </modal>
   </footer>
@@ -49,13 +40,17 @@
 
 <script>
 import Subscribe from '@/components/Subscribe';
-import MailchimpForm from '@/components/Form';
 
 export default {
   name: 'Footer',
   components: {
     Subscribe,
-    MailchimpForm,
+  },
+  mounted() {
+    let isSubscribed = false;
+    if (window.localStorage)
+      isSubscribed = window.localStorage.getItem('subscribed');
+    if (!isSubscribed) setTimeout(() => this.$modal.show('subscribe'), 10000);
   },
   methods: {
     showSubscribe() {
@@ -86,5 +81,14 @@ footer {
       color: $primary-color;
     }
   }
+}
+</style>
+<style lang="scss">
+.v--modal-overlay {
+  background: transparent;
+}
+.v--modal {
+  border-radius: 0;
+  border: 8px solid black;
 }
 </style>

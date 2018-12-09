@@ -32,19 +32,22 @@
         type="tel" 
         name="MERGE4"
         placeholder="Phone">
-      <label for="gdpr[26759]">
+      <label 
+        class="gdpr">
         <input 
           type="checkbox" 
           required
           name="gdpr[26759]">
-        Ja, ich stimme den <router :to="{ name: 'Privacy Policy' }">AGB und Datenschutzbestimmungen</router> von Red Cabinet zu. 
+        Ja, ich stimme den <span 
+class="agb" 
+                                 @click.prevent="goToPrivacy">AGB und Datenschutzbestimmungen</span> von Red Cabinet zu. 
       </label>
-      <button 
+      <app-button 
         class="button-subscribe" 
-        type="submit">SUBSCRIBE</button>
+        type="submit">SUBSCRIBE</app-button>
       <vue-markdown 
         :source="file" 
-        class="legal"/>
+        class="disclaimer"/>
     </form>
     <div 
       v-else 
@@ -79,7 +82,14 @@ export default {
   },
   methods: {
     submit() {
+      this.$ga.event('subscribe', 'click', 'form');
+      if (window.localStorage)
+        window.localStorage.setItem('subscribed', 'true');
       this.registered = true;
+    },
+    goToPrivacy() {
+      this.$router.push({ name: 'Privacy Policy' });
+      this.$modal.hide('subscribe');
     },
   },
 };
@@ -87,8 +97,7 @@ export default {
 
 <style lang="scss" scoped>
 .subscribe-modal {
-  background: black;
-  color: white;
+  color: black;
   height: 100%;
   padding: 20px;
   text-align: center;
@@ -103,30 +112,38 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    input {
-      font-size: 40px;
+    input[type='text'],
+    input[type='email'],
+    input[type='tel'] {
+      font-size: 28px;
+      line-height: 1.2;
       text-align: center;
       margin-bottom: 20px;
-      background: black;
-      color: white;
+      background: white;
+      color: black;
       border: 0;
-      border-bottom: 2px dotted grey;
-      font-size: 20px;
+      border-bottom: 5px solid black;
+      width: 100%;
       &::placeholder {
         color: grey;
       }
     }
-    .button-subscribe {
-      font-family: $font-family-header;
-      font-size: 35px;
-      color: white;
+    .gdpr {
+      font-weight: normal;
       margin-bottom: 20px;
+      .agb {
+        text-decoration: underline;
+        cursor: pointer;
+      }
     }
-    .legal {
+    .disclaimer {
+      margin-top: 30px;
       font-size: 12px;
       text-align: left;
-      color: rgba(255, 255, 255, 0.8);
       font-weight: normal;
+      & /deep/ p {
+        margin-bottom: 10px;
+      }
     }
   }
   .success {

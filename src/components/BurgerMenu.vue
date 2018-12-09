@@ -83,7 +83,7 @@ export default {
   height: 50px;
   cursor: pointer;
   transform: scale(0.5);
-  z-index: 1000;
+  z-index: 3;
 }
 .burger {
   position: absolute;

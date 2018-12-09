@@ -10,7 +10,5 @@
 <body>
   <div id="app"></div>
   <?php wp_footer(); ?>
-  <!-- mailchimp -->
-  <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/f908a8b86cd587299bacb8ff7/3a3e0e19eec0d79424a028182.js");</script>
 </body>
 </html>

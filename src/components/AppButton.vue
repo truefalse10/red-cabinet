@@ -1,7 +1,8 @@
 <template>
   <button 
     :class="{ white }" 
-    class="app-button" 
+    :type="type" 
+    class="app-button"
     @click="$emit('click')">
     <slot/>
   </button>
@@ -12,6 +13,10 @@ export default {
   name: 'AppButton',
   props: {
     white: Boolean,
+    type: {
+      type: String,
+      default: 'button',
+    },
   },
 };
 </script>
