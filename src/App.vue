@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { TweenMax } from 'gsap';
+// import { TweenMax } from 'gsap';
 import AppHeader from '@/components/Header';
 import AppFooter from '@/components/Footer';
 
@@ -21,12 +21,13 @@ export default {
     AppFooter,
   },
   mounted() {
-    TweenMax.staggerFrom(
-      '.link',
-      0.5, // duration
-      { y: '+=30', opacity: 0, delay: 0.2 },
-      0.5 // stagger
-    );
+    // DISABLE ANIMATION FOR NOW, causes troubles on mobile
+    // TweenMax.staggerFrom(
+    //   '.link',
+    //   0.5, // duration
+    //   { y: '+=30', opacity: 0, delay: 0.2 },
+    //   0.5 // stagger
+    // );
   },
 };
 </script>

@@ -9,32 +9,27 @@
     <div 
       :class="{ open }" 
       class="overlay">
-      <div 
-        v-for="(item, index) in menuItems" 
-        :key="index"
-        :class="{ active: $route.path === item.to }"
-        class="menu-link"
-        @click="open = false">
-        <router-link 
-          :to="item.to">{{ item.label }}</router-link>
-      </div>
+      <app-footer menu/>
     </div>
   </div>
 </template>
 
 <script>
+import AppFooter from '@/components/Footer';
 export default {
   name: 'BurgerMenu',
+  components: { AppFooter },
   props: {
-    // open: {
-    //   type: Boolean,
-    //   default: false,
-    // },
     menuItems: {
       type: Array,
     },
   },
   data: () => ({ open: false }),
+  watch: {
+    $route() {
+      this.open = false;
+    },
+  },
 };
 </script>
 
