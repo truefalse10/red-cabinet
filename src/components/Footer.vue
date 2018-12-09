@@ -32,7 +32,7 @@
       adaptive 
       width="500px" 
       height="400px">
-      <iframe
+      <!-- <iframe
         frameborder="0"
         scrolling="no"
         marginheight="0"
@@ -40,18 +40,22 @@
         src="https://email-marketing.ionos.de/widget/iframe/3tUu/a3X"
         width="100%"
         height="100%"
-      />
+      /> -->
+      <!-- <mailchimp-form/> -->
+      <subscribe/>
     </modal>
   </footer>
 </template>
 
 <script>
 import Subscribe from '@/components/Subscribe';
+import MailchimpForm from '@/components/Form';
 
 export default {
   name: 'Footer',
   components: {
     Subscribe,
+    MailchimpForm,
   },
   methods: {
     showSubscribe() {

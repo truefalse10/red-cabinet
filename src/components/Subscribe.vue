@@ -9,26 +9,42 @@
         @click="$modal.hide('subscribe')">
     </div>
     <form 
-      v-if="!registered" 
-      @submit.prevent="registered = true">
+      v-if="!registered"
+      ref="form" 
+      :action="endpoint" 
+      target="_blank"
+      method="post"
+      @submit="submit">
       <input 
         v-model="name" 
         type="text"
         placeholder="Name"
+        name="FNAME"
         required>
       <input 
         v-model="mail"
         type="email" 
         placeholder="Mail"
+        name="EMAIL"
         required>
       <input 
         v-model="phone"
         type="tel" 
+        name="MERGE4"
         placeholder="Phone">
+      <label for="gdpr[26759]">
+        <input 
+          type="checkbox" 
+          required
+          name="gdpr[26759]">
+        Ja, ich stimme den <router :to="{ name: 'Privacy Policy' }">AGB und Datenschutzbestimmungen</router> von Red Cabinet zu. 
+      </label>
       <button 
         class="button-subscribe" 
         type="submit">SUBSCRIBE</button>
-      <p class="legal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur repudiandae nemo veniam molestiae facilis, maiores quod sed excepturi sint eaque nesciunt. Itaque adipisci inventore possimus blanditiis nihil exercitationem vel ipsum.</p>
+      <vue-markdown 
+        :source="file" 
+        class="legal"/>
     </form>
     <div 
       v-else 
@@ -41,6 +57,11 @@
 
 <script>
 import Close from '@/components/BurgerMenu';
+import file from 'raw-loader!@/texts/subscribe.md';
+
+const MAILCHIMP_URL =
+  'https://redcabinet.us19.list-manage.com/subscribe/post?u=f908a8b86cd587299bacb8ff7&id=f0fc013b31';
+
 export default {
   name: 'Subscribe',
   components: {
@@ -48,11 +69,18 @@ export default {
   },
   data() {
     return {
+      file,
+      endpoint: MAILCHIMP_URL,
       registered: false,
       name: '',
       mail: '',
       phone: '',
     };
+  },
+  methods: {
+    submit() {
+      this.registered = true;
+    },
   },
 };
 </script>
