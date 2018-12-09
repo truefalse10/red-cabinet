@@ -1,5 +1,6 @@
 $primary-color: rgb(223, 27, 11);
-$font-family-header: 'Fledgling';
+$font-family-name: 'Fledgling';
+$font-family-header: $font-family-name, Arial, sans-serif;
 $font-size-base: 12px;
 
 $md: 768px;

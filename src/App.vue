@@ -34,7 +34,8 @@ export default {
 
 <style lang="scss">
 @font-face {
-  font-family: $font-family-header;
+  font-family: $font-family-name;
+  font-display: swap;
   src: url('./assets/fonts/fledgling-sb.ttf') format('truetype');
 }
 * {
