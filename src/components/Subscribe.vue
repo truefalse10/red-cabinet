@@ -4,7 +4,6 @@
     <div class="close-x">
       <img 
         src="@/assets/close-x.svg" 
-        alt="close-icon" 
         type="button"
         @click="$modal.hide('subscribe')">
     </div>
@@ -39,8 +38,8 @@
           required
           name="gdpr[26759]">
         Ja, ich stimme den <span 
-class="agb" 
-                                 @click.prevent="goToPrivacy">AGB und Datenschutzbestimmungen</span> von Red Cabinet zu. 
+          class="agb" 
+          @click.prevent="goToPrivacy">AGB und Datenschutzbestimmungen</span> von Red Cabinet zu. 
       </label>
       <app-button 
         class="button-subscribe" 
