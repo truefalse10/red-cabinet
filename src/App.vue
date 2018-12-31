@@ -26,7 +26,7 @@ export default {
   mounted() {
     let currentImage = 0;
     setInterval(() => {
-      this.$refs.app.style = `background-image: url("/img/cabinet/bg${currentImage}.jpg"`;
+      this.$refs.app.style = `background-image: url("/wp-content/themes/redcabinet/img/cabinet/bg${currentImage}.jpg"`;
       currentImage === 5 ? (currentImage = 0) : currentImage++;
     }, BACKGROUND_INTERVAL);
     // DISABLE ANIMATION FOR NOW, causes troubles on mobile
