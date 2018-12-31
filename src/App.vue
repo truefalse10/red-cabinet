@@ -1,7 +1,8 @@
 <template>
   <div 
     id="app" 
-    :class="{ cabinet: $route.name === 'Cabinet'}">
+    ref="app"
+    :class="{ cabinet: $route.name === 'Cabinet', 'no-bg': $route.name !== 'Cabinet'}">
     <app-header/>
     <keep-alive>
       <router-view/>
@@ -21,6 +22,11 @@ export default {
     AppFooter,
   },
   mounted() {
+    let currentImage = 0;
+    setInterval(() => {
+      this.$refs.app.style = `background-image: url("/img/cabinet/bg${currentImage}.jpg"`;
+      currentImage === 5 ? (currentImage = 0) : currentImage++;
+    }, 3000);
     // DISABLE ANIMATION FOR NOW, causes troubles on mobile
     // TweenMax.staggerFrom(
     //   '.link',
@@ -62,11 +68,15 @@ body {
   flex-direction: column;
   justify-content: space-between;
   transition: background 300ms ease-out;
+  &.no-bg {
+    background: none !important;
+  }
   &.cabinet {
     background-image: url('./assets/kbb_small.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+    transition: background-image 500ms ease;
     color: white;
   }
 }
