@@ -16,6 +16,8 @@
 import AppHeader from '@/components/Header';
 import AppFooter from '@/components/Footer';
 
+const BACKGROUND_INTERVAL = 3000; //ms
+
 export default {
   components: {
     AppHeader,
@@ -26,7 +28,7 @@ export default {
     setInterval(() => {
       this.$refs.app.style = `background-image: url("/img/cabinet/bg${currentImage}.jpg"`;
       currentImage === 5 ? (currentImage = 0) : currentImage++;
-    }, 3000);
+    }, BACKGROUND_INTERVAL);
     // DISABLE ANIMATION FOR NOW, causes troubles on mobile
     // TweenMax.staggerFrom(
     //   '.link',
