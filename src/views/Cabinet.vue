@@ -2,11 +2,11 @@
   <div class="cabinet">
     <p class="next">Next Cabinet:<br>19.01.19</p>
     <vue-markdown :source="file"/>
-    <p class="small">Read more about or subscribe for further<br>informations and entry</p>
+    <p class="small">Buy tickets or subscribe for further<br>informations and entry</p>
     <div class="buttons">
       <app-button 
         white 
-        @click="$router.push({ name: 'about' })">About</app-button>
+        @click="tickets">Tickets</app-button>
       <app-button 
         white 
         @click="showSubscribe">Subscribe</app-button>
@@ -23,6 +23,12 @@ export default {
     showSubscribe() {
       this.$ga.event('subscribe', 'click', 'cabinet');
       this.$modal.show('subscribe');
+    },
+    tickets() {
+      window.open(
+        '//www.tickettailor.com/events/kunstblockbalve/226382',
+        '_blank'
+      );
     },
   },
 };
