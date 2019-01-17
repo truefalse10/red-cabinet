@@ -13,7 +13,8 @@
             {{ data.venue.zip }} {{ data.venue.city }}
           </h2>
           <h2>
-            Einlass: {{ entry }}
+            Einlass: {{ entry }}<br>
+            Beginn: {{ beginn }}
             <!--  TODO: add Beginn -->
           </h2>
           <div class="links">
@@ -45,6 +46,9 @@ export default {
   computed: {
     entry() {
       return moment(this.data.start_date).format('HH:mm');
+    },
+    beginn() {
+      return moment(this.data.end_date).format('HH:mm');
     },
   },
 };

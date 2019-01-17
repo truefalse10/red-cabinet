@@ -28,7 +28,6 @@
 ## 15.01.2019
 
 - confirmation fenster danach wieder schließen (idea: window.open => wait for certain element to be loaded => window.close)
-- Event Start: Datum Beginn, Event Beginn: Datum Ende
 - Cookie Bar mit Link auf Privacy Policy, Button OK, closing X
 - Pfeil bei Event Content nach oben
 - Event Tickets, Facebook Pfeile
