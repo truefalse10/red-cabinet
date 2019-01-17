@@ -20,7 +20,7 @@ Reise- und Übernachtungskosten werden generell nicht erstattet! Bitte informier
 Reise- und Übernachtungskosten werden generell nicht erstattet! Bitte informieren Sie sich daher regelmäßig auf unserer Homepage (www.redcabinet.de) sowie in Presse, Funk und Fernsehen über eventuelle Änderungen Ihrer Veranstaltung.
 
 Ich habe meine Tickets verloren, können Sie sie mir bitte noch einmal ausdrucken?
-Bei Verlust der Tickets ist generell kein Ersatz oder Nachdruck möglich. Eintrittskarten sind ähnlich wie Bargeld und sollten mit derselben Sorgfalt behandelt und aufbewahrt werden. Wenn Sie Ihre Tickets nicht mehr auffinden können, wenden Sie sich bitte an wn@redcabinet.de und mr@redcabinet.de und wir versuchen, eine gemeinsame Lösung zu finden.
+Bei Verlust der Tickets ist generell kein Ersatz oder Nachdruck möglich. Eintrittskarten sind ähnlich wie Bargeld und sollten mit derselben Sorgfalt behandelt und aufbewahrt werden. Wenn Sie Ihre Tickets nicht mehr auffinden können, wenden Sie sich bitte an info@redcabinet.de und wir versuchen, eine gemeinsame Lösung zu finden.
 
 ### Zweitmarkt: Kann ich Tickets auf Ebay / Ebay – Kleinanzeigen / anderen Wiederverkaufs-Plattformen kaufen?
 

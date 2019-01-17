@@ -14,8 +14,7 @@ Maximilian Rottenaicher
 
 ### Kontakt
 
-wn@redcabinet.de
-mr@redcabinet.de
+info@redcabinet.de
 
 ### Umsatzsteuer
 

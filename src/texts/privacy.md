@@ -70,7 +70,7 @@ Balanstr. 27
 
 Deutschland
 
-E-Mail: wn@redcabinet.de & mr@redcabinet.de
+E-Mail: info@redcabinet.de
 
 Website: www.redcabinet.de
 
