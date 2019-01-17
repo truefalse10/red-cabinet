@@ -27,8 +27,6 @@
 
 ## 15.01.2019
 
-- subscribe Fenster Kleiner (schmäler)
-- subscribe mit "first name" "last name", keine checkbox, datenschutz verlinken in text
 - confirmation fenster danach wieder schließen
 - imprint/faq/privacy policy email info@redacabinet.de
 - Impressum Text ändern (email)

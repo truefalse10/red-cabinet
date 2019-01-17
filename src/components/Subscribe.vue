@@ -15,23 +15,25 @@
       method="post"
       @submit="submit">
       <input 
-        v-model="name" 
         type="text"
-        placeholder="Name"
+        placeholder="First Name"
         name="FNAME"
         required>
       <input 
-        v-model="mail"
+        type="text"
+        placeholder="Last Name"
+        name="LNAME"
+        required>
+      <input 
         type="email" 
         placeholder="Mail"
         name="EMAIL"
         required>
       <input 
-        v-model="phone"
         type="tel" 
         name="MERGE4"
         placeholder="Phone">
-      <label 
+      <!-- <label 
         class="gdpr">
         <input 
           type="checkbox" 
@@ -40,7 +42,7 @@
         Ja, ich stimme den <span 
           class="agb" 
           @click.prevent="goToPrivacy">AGB und Datenschutzbestimmungen</span> von Red Cabinet zu. 
-      </label>
+      </label> -->
       <app-button 
         class="button-subscribe" 
         type="submit">SUBSCRIBE</app-button>
@@ -74,9 +76,6 @@ export default {
       file,
       endpoint: MAILCHIMP_URL,
       registered: false,
-      name: '',
-      mail: '',
-      phone: '',
     };
   },
   methods: {
@@ -98,7 +97,7 @@ export default {
 .subscribe-modal {
   color: black;
   height: 100%;
-  padding: 20px;
+  padding: 20px 30px;
   text-align: center;
   .close-x {
     text-align: right;
@@ -114,14 +113,14 @@ export default {
     input[type='text'],
     input[type='email'],
     input[type='tel'] {
-      font-size: 28px;
+      font-size: 22px;
       line-height: 1.2;
       text-align: center;
       margin-bottom: 20px;
       background: white;
       color: black;
       border: 0;
-      border-bottom: 5px solid black;
+      border-bottom: 4px solid black;
       width: 100%;
       &::placeholder {
         color: grey;
