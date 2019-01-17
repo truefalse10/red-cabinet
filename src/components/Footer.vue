@@ -113,6 +113,7 @@ footer {
     display: none;
     @include breakpoint($md) {
       display: flex;
+      justify-content: center;
     }
   }
   &.menu {

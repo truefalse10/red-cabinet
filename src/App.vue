@@ -1,13 +1,16 @@
 <template>
-  <div 
-    id="app" 
-    ref="app"
-    :class="{ cabinet: $route.name === 'Cabinet', 'no-bg': $route.name !== 'Cabinet'}">
-    <app-header/>
-    <keep-alive>
-      <router-view/>
-    </keep-alive>
-    <app-footer/>
+  <div>
+    <cookie-bar/>
+    <div 
+      id="app" 
+      ref="app"
+      :class="{ cabinet: $route.name === 'Cabinet', 'no-bg': $route.name !== 'Cabinet'}">
+      <app-header/>
+      <keep-alive>
+        <router-view/>
+      </keep-alive>
+      <app-footer/>
+    </div>
   </div>
 </template>
 
@@ -15,6 +18,7 @@
 // import { TweenMax } from 'gsap';
 import AppHeader from '@/components/Header';
 import AppFooter from '@/components/Footer';
+import CookieBar from '@/components/CookieBar';
 
 const BACKGROUND_INTERVAL = 3000; //ms
 
@@ -22,6 +26,7 @@ export default {
   components: {
     AppHeader,
     AppFooter,
+    CookieBar,
   },
   mounted() {
     let currentImage = 0;
@@ -57,13 +62,13 @@ body {
   min-height: 100vh;
   padding: 0;
   margin: 0;
-}
-#app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: bold;
   color: black;
+}
+#app {
   min-height: 100vh;
   display: flex;
   padding: 20px;
@@ -81,11 +86,6 @@ body {
     transition: background-image 500ms ease;
     color: white;
   }
-}
-footer {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
 }
 button,
 input[type='submit'],

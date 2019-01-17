@@ -28,9 +28,13 @@
 ## 15.01.2019
 
 - confirmation fenster danach wieder schließen (idea: window.open => wait for certain element to be loaded => window.close)
-- Cookie Bar mit Link auf Privacy Policy, Button OK, closing X
 - Pfeil bei Event Content nach oben
 - Event Tickets, Facebook Pfeile
 - text-align: justify(blocktext) bei concerts und privacy policy, faq, imprint
 - Mauszeiger Pfeil
 - Closing X
+
+## Timetracking
+
+15.01. 1h meeting
+17.01. 2h cookie, email, form, event
