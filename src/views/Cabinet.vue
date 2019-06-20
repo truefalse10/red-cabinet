@@ -1,6 +1,6 @@
 <template>
   <div class="cabinet">
-    <p class="next">Next Cabinet:<br>15.03.19</p>
+    <p class="next">Next Cabinet:<br>23.06.19</p>
     <vue-markdown :source="file"/>
     <p class="small">Buy tickets or subscribe for further<br>informations and entry</p>
     <div class="buttons">
