@@ -2,7 +2,7 @@
   <div class="cabinet">
     <p class="next">Next Cabinet:<br>23.06.19</p>
     <vue-markdown :source="file"/>
-    <p class="small">Buy tickets or subscribe for further<br>informations and entry</p>
+    <p class="small">Subscribe for further information</p>
     <div class="buttons">
       <app-button 
         white 
