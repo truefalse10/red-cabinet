@@ -3,7 +3,7 @@
     class="subscribe-modal">
     <div class="close-x">
       <img 
-        src="@/assets/close-x.svg" 
+        src="/wp-content/themes/redcabinet/img/close-x.svg" 
         type="button"
         @click="$modal.hide('subscribe')">
     </div>
