@@ -20,8 +20,6 @@ import AppHeader from '@/components/Header';
 import AppFooter from '@/components/Footer';
 import CookieBar from '@/components/CookieBar';
 
-const BACKGROUND_INTERVAL = 3000; //ms
-
 export default {
   components: {
     AppHeader,
