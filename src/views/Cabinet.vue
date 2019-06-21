@@ -1,6 +1,6 @@
 <template>
   <div class="cabinet">
-    <p class="next">Red Cabinet Open Air @ Bahnwärter Thiel<br>23.06.19</p>
+    <p class="next">Red Cabinet Open Air @ Bahnwärter Thiel<br>23.06.19<br>12:00 - 20:00 Uhr</p>
     <vue-markdown :source="file"/>
     <p class="small">Subscribe for further information</p>
     <div class="buttons">
