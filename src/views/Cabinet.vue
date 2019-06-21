@@ -6,7 +6,7 @@
     <div class="buttons">
       <app-button 
         white 
-        @click="tickets">Tickets</app-button>
+        @click="tickets">FB-Event</app-button>
       <app-button 
         white 
         @click="showSubscribe">Subscribe</app-button>
@@ -26,7 +26,7 @@ export default {
     },
     tickets() {
       window.open(
-        '//www.tickettailor.com/events/kunstblockbalve/226382',
+        '//www.facebook.com/events/1218706034958266/',
         '_blank'
       );
     },
