@@ -11,4 +11,4 @@ Der Ort, an dem sich Kunst in visueller, auditiver und haptischer Form präsent
 Kannst du es fühlen?
 Finde es heraus und werde Teil des Red Cabinets. Hier und jetzt.
 
-Melde dich hier an und erfahre mehr!
+Melde dich hier an und erfahre mehr.
