@@ -1,6 +1,6 @@
 <template>
   <div class="cabinet">
-    <p class="next">Red Cabinet Open Air @ Bahnwärter Thiel<br>23.06.19<br>12:00 - 20:00 Uhr</p>
+    <p class="next">Red Cabinet @ Rote Sonne w/ POLIZEI live in concert, Head High aka Shed (Ostgut Ton / Berlin), Maxâge and James Beyond b2b Spencer Zabiela<br>07.09.19<br><10pm - open end</p>
     <vue-markdown :source="file"/>
     <p class="small">Subscribe for further information</p>
     <div class="buttons">
@@ -26,7 +26,7 @@ export default {
     },
     tickets() {
       window.open(
-        '//www.facebook.com/events/1218706034958266/',
+        '//www.facebook.com/events/420491892141732/',
         '_blank'
       );
     },
