@@ -1,6 +1,6 @@
 <template>
   <div class="cabinet">
-    <p class="next">Red Cabinet @ Rote Sonne w/ POLIZEI live in concert, Head High aka Shed (Ostgut Ton / Berlin), Maxâge and James Beyond b2b Spencer Zabiela<br>07.09.19<br><22:00 - 07:00 Uhr</p>
+    <p class="next">Red Cabinet @ Rote Sonne<br>07.09.19<br><22:00 - 07:00 Uhr</p>
     <vue-markdown :source="file"/>
     <p class="small">Subscribe for further information</p>
     <div class="buttons">
