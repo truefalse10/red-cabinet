@@ -5,8 +5,8 @@
 Red Cabinet
 
 Nikele & Rottenaicher GbR
-Balanstr. 27
-81669 München
+Karwendelstr. 38
+81369 München
 
 Vertreten durch die Gesellschafter:
 Wolfgang Nikele
